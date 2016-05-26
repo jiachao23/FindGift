@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>Find a gift</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 引入 Bootstrap -->
+        <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="__CSS__/admin_style.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+        <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+        <!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- 左边导航栏 -->
+        <include file="./Application/Admin/View/Common/left_menu.html" />
+
+        <!-- 右边内容页面 -->
+        <div class="col-md-10 col-md-offset-2" id="right_content">
+          <div class="jumbotron" id="right_top">
+            <h1>hello,{$_SESSION['username']}</h1>
+            <p>欢迎您登录管理系统后台
+            </p>
+          </div>
+
+          
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 引入公共js -->
+        <include file="./Application/Admin/View/Common/common_js.html" />
+
+    <script type="text/javascript">
+      function del(uid){
+        if(confirm("确认要删除吗？")){
+          $.post(
+            "{:U('article/delArticle')}",
+            {id:uid},
+            function(result){
+              alert(result);
+              window.location.reload();
+            }
+          );
+        }
+      }
+    </script>
+
+  </body>
+</html>

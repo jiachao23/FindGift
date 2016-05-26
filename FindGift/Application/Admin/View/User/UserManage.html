@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>Find a gift</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 引入 Bootstrap -->
+        <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="__CSS__/admin_style.css" rel="stylesheet" type="text/css"/>
+        <link href="__CSS__/app.min.css" rel="stylesheet" type="text/css"/>
+        <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+        <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+        <!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+        
+
+  </head>
+
+    <body>
+        
+        <nav class="sidebar">
+         <include file="./Application/Admin/View/Common/left_menu.html" />   
+        </nav>
+        <section class="content">
+        <section class="content__main">
+          <div  id="right_content">
+          <ol class="breadcrumb">
+            <li><a href="#">后台首页</a></li>
+            <li class="active">管理用户</li>
+          </ol>
+          <div class="right_div">
+            <div class="div_logo">管理用户</div>
+            <div class="div_con">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th style="display:none">ID</th>
+                    <th>用户名称</th>
+                    <th>管理操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <volist name="data" id="vo">
+                  <tr>
+                    <td style="display:none">{$vo.id}</td>
+                    <td>{$vo.username}</td>
+                    <td>
+                      <a href="{:U('User/updateUser', array('username'=>$vo['username']))}" title="修改密码"><span class="glyphicon glyphicon-pencil"></span></a>
+                      &nbsp&nbsp&nbsp
+                      <a href="#" title="删除" onclick="delUser({$vo.id})"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                  </tr>
+                  </volist>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="right_div" id="addCategory">
+            <div class="div_logo">添加用户</div>
+            <div class="div_con">
+              <form id="CategoryForm">
+                <div class="form-group">
+                  <label for="username">用户名称</label>
+                  <input type="text" class="form-control" id="username">
+                </div>
+                <div class="form-group">
+                  <label for="password">登陆密码</label>
+                  <input type="password" class="form-control" id="password">
+                </div>
+                <div class="form-group">
+                  <label for="repassword">确认密码</label>
+                  <input type="password" class="form-control" id="repassword">
+                </div>
+                <div id="CategoryBtn">
+                  <button id="addUser" type="button" class="btn btn-primary">添加用户</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div> 
+        </section>
+        
+        </section>
+        
+<!-- 引入公共js -->
+        <include file="./Application/Admin/View/Common/common_js.html" />
+
+    <script type="text/javascript">
+      $("#addUser").click(function(){
+        var username = $('#username').val();
+        var password = $('#password').val();
+        var repassword = $('#repassword').val();
+        if(username == ''){
+          alert('用户名不能为空');
+        }else if(password == ''){
+          alert('密码不能为空');
+        }else if(password !== repassword){
+          alert('两次输入的密码不一致，请重新输入')
+        }else{
+          $.post("{:U('User/addUser')}",
+            {username:username, password:password, repassword:repassword},
+            function($result){
+              alert($result);
+              window.location.reload();
+            }
+          );
+        }
+      });
+
+      function delUser(uid){
+        if(confirm("确认要删除吗？")){
+          $.post(
+            "{:U('User/delUser')}",
+            {id:uid},
+            function(result){
+              alert(result);
+              window.location.reload();
+            }
+          );
+        }
+      }
+    </script>
+  
+    </body>
+
+</html>

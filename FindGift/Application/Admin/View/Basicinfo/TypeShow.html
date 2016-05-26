@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>Find a gift</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 引入 Bootstrap -->
+        <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="__CSS__/admin_style.css" rel="stylesheet" type="text/css"/>
+        <link href="__CSS__/app.min.css" rel="stylesheet" type="text/css"/>
+        <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+        <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+        <!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+  </head>
+    <body>        
+        <nav class="sidebar">
+         <include file="./Application/Admin/View/Common/left_menu.html" />   
+        </nav>
+        <section class="content">
+        <section class="content__main">
+         <!-- 右边内容页面 -->
+                <div id="right_content">
+                    <ol class="breadcrumb">
+                        <li><a href="#">后台首页</a></li>
+                        <li class="active">商品类别管理</li>
+                    </ol>
+                    <div class="right_div">
+                        <div class="div_logo">商品类别管理</div>
+                        <div class="div_con">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="display:none">ID</th>
+                                        <th>商品名称</th>
+                                        <th>排序</th>
+                                        <th>过滤值</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <volist name="data" id="vo">
+                                    <tr>
+                                        <td style="display:none">{$vo.id}</td>
+                                        <td>{$vo.type}</td>
+                                        <td>{$vo.rank}</td>
+                                        <td>{$vo.filter}</td>
+                                        <td>
+                                            <a href="{:U('Basicinfo/TypeEditShow', array('id'=>$vo['id']))}" title="编辑"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            &nbsp&nbsp&nbsp
+                                            <a href="#" title="删除" onclick="delType({$vo.id})"><span class="glyphicon glyphicon-trash"></span></a>
+                                        </td>
+                                    </tr>
+                                </volist>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="right_div" id="addCategory">
+                        <div class="div_logo">添加商品分类</div>
+                        <div class="div_con">
+                            <form id="CategoryForm">
+                                <div class="form-group">
+                                    <label for="TypeName">商品名称</label>
+                                    <input type="text" class="form-control" id="TypeName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="RankNum">排序</label>
+                                    <input type="text" class="form-control" id="RankNum">
+                                </div>
+                                <div class="form-group">
+                                    <label for="filter">过滤值</label>
+                                    <input type="text" class="form-control" id="filter">
+                                </div>
+                                <div id="CategoryBtn">
+                                    <button id="TypeSub" type="button" class="btn btn-primary">添加分类</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>   
+        </section>        
+        </section>
+        
+    <!-- 引入公共js -->
+    <include file="./Application/Admin/View/Common/common_js.html" />
+
+    <!-- 添加分类执行检测 -->
+    <script type="text/javascript">
+        $("#TypeSub").click(function () {
+            var CateName = $("#TypeName").val();
+            var CateNum = $("#RankNum").val();
+            var CateData = $("#filter").val();
+            if (CateName === '') {
+                alert("分类名称不能为空");
+            } else if (CateNum === '') {
+                alert("排序不能为空");
+            } else if (CateData === '') {
+                alert("过滤值不能为空");
+            } else if (isNaN(CateNum)) {
+                alert("排序必须为数字");
+            } else {
+                $.post(
+                        "{:U('Basicinfo/TypeAdd')}",
+                        {type: CateName, rank: CateNum, filter: CateData },
+                function (result) {
+                    alert(result);
+                    window.location.reload();
+                }
+                );
+            }
+        });
+
+        function delCate(uid) {
+            if (confirm("确认要删除吗？")) {
+                $.post(
+                        "{:U('Basicinfo/SellerDel')}",
+                        {id: uid},
+                function (result) {
+                    alert(result);
+                    window.location.reload();
+                }
+                );
+            }
+        }
+
+    </script>
+  
+    </body>
+
+</html>

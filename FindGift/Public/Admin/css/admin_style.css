@@ -1,0 +1,281 @@
+#left_menu{
+	background-color: #330066;
+	color: #FFFFCC;
+	//padding-top: 30px;
+	//padding-bottom: 30px;
+	//position: fixed;
+	//bottom: 0px;
+	//top: 0px;
+}
+
+#left_logo{
+	line-height: 20px;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+#left_logo h1{
+	margin:0;
+	font-size: 20px;
+}
+
+#left_user{
+	color: white;
+	border-top: solid 1px #3366ff;
+	border-bottom: solid 1px #3366ff;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.left_user_info{
+	display: block;
+	margin-bottom: 10px;
+}
+
+.left_user_info a{
+	color: white;
+}
+
+.left_user_info a:hover{
+	text-decoration: none;
+	color:#33ffff;
+}
+
+#left_nav{
+	text-align: left;
+}
+
+#left_nav_menu{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#left_nav_menu .nav_list{
+	list-style-type: none;
+}
+
+.nav_list{
+	font-weight: bold;
+	margin-top: 20px;
+	font-size: 14px;
+	color: #33cccc;
+	line-height: 14px;
+}
+
+.nav_icon{
+	margin-right: 10px;
+}
+
+.nav_link{
+	color: #33cccc;
+	display: block;
+}
+
+.nav_link:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.sub_menu{
+	display: none;
+	padding: 0;
+	margin-left: 50px;
+	border-left: solid 2px white;
+}
+
+.sub_menu a:hover{
+	width: 100%;
+	display: block;
+	background-color: white;
+	text-decoration: none;
+	color: black;
+}
+
+.sub_list{
+	color: #33cccc;
+	margin-top: 10px;
+	font-size: 12px;
+	font-weight: normal;
+	list-style-type: none;
+}
+
+#right_content{
+	padding-top: 10px;
+}
+
+#right_top{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #006699;
+}
+
+#right_top h1{
+	font-size: 30px;
+	color: #003300;
+}
+
+#right_top p{
+	color: #ffffff;
+	font-size: 14px;
+}
+
+.right_div{
+	border: solid 1px gray;
+	margin-top: 20px;
+}
+
+.div_logo{
+	width: 100%;
+	color: #505050;
+	background: #dddddd;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #fafafa));
+	background: -ms-linear-gradient(bottom, #dddddd, #fafafa);
+	background: -moz-linear-gradient(center bottom, #dddddd 0%, #fafafa 100%);
+	background: -o-linear-gradient(bottom, #dddddd, #fafafa);
+	filter: progid:dximagetransform.microsoft.gradient(startColorStr='#4d5b76', EndColorStr='#6c7a95');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa',EndColorStr='#dddddd')";
+	height: 35px;
+	line-height: 35px;
+	font-size: 13px;
+	padding-left: 5px;
+	border-bottom: 1px solid gray;
+	font-weight: bold;
+}
+
+.div_query{
+	width: 100%;
+	color: #505050;
+	background: #dddddd;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #fafafa));
+	background: -ms-linear-gradient(bottom, #dddddd, #fafafa);
+	background: -moz-linear-gradient(center bottom, #dddddd 0%, #fafafa 100%);
+	background: -o-linear-gradient(bottom, #dddddd, #fafafa);
+	height: 60px;
+	line-height: 60px;
+	font-size: 15px;
+	padding-left: 15px;
+	border-bottom: 1px solid gray;
+}
+
+.div_con{
+	padding: 5px 10px 0px 10px;
+}
+
+.div_con table th{
+	text-align: center;
+}
+
+.div_con table{
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.nav_table{
+	width: 100%;
+	margin-top: 5px;
+}
+
+#nav_tab{
+	margin-bottom: 15px;
+}
+
+.nav_header{
+	font-weight: bold;
+	font-size: 22px;
+	color: #999999;
+}
+
+.nav_num{
+	font-size: 14px;
+}
+
+.mark_line{
+	margin-top: 50px;
+}
+
+.footer{
+	font-size: 13px;
+	color: #666666;
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+
+.page_num{
+	text-align: center;
+}
+
+#addCategory{
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#CategoryForm{
+	padding: 10px 20px;
+}
+
+#CategoryBtn{
+	text-align: right;
+}
+
+#articleEdit{
+	padding: 10px 20px;
+}
+
+#articleTitle{
+	margin-left: 10px;
+	width: 500px;
+}
+
+#ueditorDiv{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#articleCate label{
+	margin-right: 10px;
+}
+
+#articleCate select{
+	margin-right: 100px;
+}
+
+#articleSub{
+	text-align: right;
+}
+
+#articleNull{
+	height: 300px;
+	text-align: center;
+	line-height: 300px;
+}
+
+.upload-img-box .upload-pre-item {
+	padding: 1px;
+	max-width: 300px;
+	max-height: 300px;
+	overflow: hidden;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	transition: all .3s linear;
+}
+.upload-img-box .upload-pre-item img {
+	vertical-align: top;
+}
+
+/* uploadify插件上传按钮 */
+.uploadify-button {
+	color: #fff;
+	background-color: #7963df;
+         text-align:  center;
+}
+.uploadify-button-text{
+    font-weight: bold;
+	font-size: 15px;
+	color:#FF5580;
+       
+}

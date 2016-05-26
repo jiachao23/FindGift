@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>Find a gift</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 引入 Bootstrap -->
+        <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="__CSS__/admin_style.css" rel="stylesheet" type="text/css"/>
+        <link href="__CSS__/app.min.css" rel="stylesheet" type="text/css"/>
+        <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+        <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+        <!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+  </head>
+    <body>        
+        <nav class="sidebar">
+         <include file="./Application/Admin/View/Common/left_menu.html" />   
+        </nav>
+        <section class="content">
+        <section class="content__main">
+          <div  id="right_content">
+          <ol class="breadcrumb">
+            <li><a href="#">后台首页</a></li>
+            <li class="active">商品管理</li>
+          </ol>
+          <div class="right_div">
+              
+              <div class="div_query">
+                  <form class="form-inline" role="form" action="{:U('Goods/queryGoods')}" method="post">
+                      <div class="form-group">
+                          <label for="name">品牌</label>
+                          <input type="text" class="form-control" id="brand" name="brand" 
+                                 placeholder="请输入品牌名称">
+                      </div>
+                      <div class="form-group">
+                          <label for="name">货名</label>
+                          <input type="text" class="form-control" id="goodsname" name="goodsname" 
+                                 placeholder="请输入货物名称">
+                      </div>
+                      <div class="form-group">
+                          <label for="name">创建人</label>
+                          <input type="text" class="form-control" id="createman" name="createman" 
+                                 placeholder="请输入创建人姓名">
+                      </div>
+                      <button type="submit" class="btn btn-default" id="query">查询</button>
+                  </form>
+              </div>
+              
+            <div class="div_logo">商品列表</div>
+            <div class="div_con">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th style="display:none">ID</th>
+                    <th>品牌</th>
+                    <th>货名</th>
+                    <th>价格</th>
+                    <th>用途</th>
+                    <th>艺术科技性</th>
+                    <th>分类属性1</th>
+                    <th>分类属性2</th>
+                    <th>分类属性3</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <volist name="data" id="vo">
+                  <tr>
+                    <td style="display:none">{$vo.id}</td>
+                    <td>{$vo.brand}</td>
+                    <td>{$vo.goodsname}</td>
+                    <td>{$vo.price}</td>
+                    <td>{$vo.application}</td>
+                    <td>{$vo.art_tech}</td>
+                    <td>{$vo.type1}</td>
+                    <td>{$vo.type2}</td>
+                    <td>{$vo.type3}</td>
+                    <td>
+                      <a href="{:U('Goods/editInfo', array('id'=>$vo['id']))}" title="编辑"><span class="glyphicon glyphicon-pencil"></span></a>
+                    </td>
+                  </tr>
+                  </volist>
+                </tbody>
+              </table>
+              </div>    
+                <div class="pages">
+                        {$page}
+                </div>
+                
+          
+          </div>
+         
+        </div> 
+        </section>        
+        </section>
+        
+    <!-- 引入公共js -->
+        <include file="./Application/Admin/View/Common/common_js.html" />
+  
+    </body>
+
+</html>
+

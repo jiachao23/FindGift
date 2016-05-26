@@ -1,0 +1,346 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015-11-5, 10:45:48
+    Author     : jingxin
+*/
+
+html,body{
+    color:black;
+   // line-height: 1.75em;
+    font-family: 'Microsoft YaHei', '微软雅黑';
+    overflow: auto;
+}
+
+body{
+   background: #f7f7f7 url("../images/pattern.png") repeat scroll left top;
+  // background: #FFDDE6 url("../images/pattern.png") repeat scroll left top;
+   
+}
+.main-header {  
+     margin: 12px;
+   // padding: 10px 0;
+   // border-bottom: .1em solid #CCCCCC;
+  //  border-top : .1em solid #CCCCCC;
+    line-height:40px;
+    -moz-box-shadow: 0 2px 2px #a3a3b3;/*firefox*/
+    -webkit-box-shadow: 0 2px 2px #a3a3b3;/*safari或chrome*/
+   // box-shadow:0 2px 2px #a3a3b3;
+}
+
+.main-header .logo{
+    font-size: 2em;
+    vertical-align: middle;
+    font-family: 'Algerian';
+    line-height:40px; 
+    //display:inline-block;
+}
+
+.main-header img{
+    height: 40px;
+    width: 40px;
+    display:inline-block;
+}
+
+.meta {
+	position: relative;
+	margin: 5px 0 0;
+	//padding: 0 60px 0 0;
+	text-align: left;
+}
+
+.meta__brand {
+	font-size: .75em;
+	font-weight: bold;
+        padding: .4em 0 .1em;
+        line-height: 20px;
+        vertical-align: middle;
+	//display: block;
+	color: #595b64;
+}
+
+.meta__title {
+	font-size: .75em;
+	//font-weight: bold;
+	margin: 0;
+        display: block;	
+}
+
+.meta__title a{
+	font-size: .75em;
+	//font-weight: bold;
+	margin: 0;
+        color:red;
+}
+
+.meta__price {
+	float: left;
+        font-size: 15px;
+        font-family: arial;
+        line-height: 20px;
+	font-weight: bold;
+        //color: #f40;
+        color: #FF265C;
+        width: 100%
+}
+
+.meta__icon{
+    font-size: 15px;
+    line-height: 20px;
+    float:left;
+    color: #FF265C;
+    //display: inline;
+    padding: .4em .4em 0 0;
+}
+.badge{
+    background-color: #FF265C;
+    
+}
+.grid__item {
+	position: relative;
+	float: left;
+	width: 20%;
+       // height: 200px;
+	padding: .75em;
+}
+
+.slider {
+	padding: 0;
+	border-radius: 5px;
+}
+.slider img {
+	width: 100%;
+        height: 80%;
+}
+
+.bar {
+	position: fixed;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: .85em 5em;
+	text-align: center;
+	background: #FF5580;
+	-webkit-transform: translate3d(0, 0, 0);
+	/* Fix for Chrome flicker on Mac ...party like we're in 2012! */
+}
+
+/* Filter */
+
+
+.filter__item {
+        font-size: .85em;
+	font-weight: bold;
+	margin: 0 2%;
+	padding: .1em;
+	vertical-align: middle;
+	color: #a3a3b3;
+	border-bottom: 2px solid transparent;
+}
+
+.filter__item--selected {
+	color: #5c5edc;
+	border-color: #5c5edc;
+}
+
+
+/* Action style */
+
+.action {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: .25em;
+	cursor: pointer;
+	color: #fff;
+	border: none;
+	background: none;
+}
+
+.action:focus {
+	outline: none;
+}
+
+.action--button {
+	color: #5c5edc;
+}
+
+.no-touch .action--button:hover {
+	color: #fff;
+	outline: none;
+}
+
+.text-hidden {
+	position: absolute;
+	top: 200%;
+}
+
+.mainlink{
+    font-size: 15px;
+    color:black; 
+    text-decoration:none;
+}
+
+.goods-meta{
+    height:40px;
+    line-height: 40px;
+}
+
+.goods-img{
+    height: 298px;
+    width: 300px;
+}
+
+.goods-detail{
+    mheight: 80px;width: 100%;
+}
+
+.btn-danger{
+    width: 200px;
+    font-weight: bold;
+}
+
+.center-left {
+    height: 300px;
+    text-align: center;
+    border-top : .1em solid #CCCCCC;
+    border-left : .1em solid #CCCCCC;
+    //border-bottom : .1em solid #CCCCCC;
+}
+
+.center-middle {
+    border-top : .1em solid #CCCCCC;
+    border-right:  .1em solid #CCCCCC;
+   // border-bottom : .1em solid #CCCCCC;
+    height: 300px;
+}
+.center-right {
+    border-left : .1em solid #CCCCCC;
+    border-bottom : .1em solid #CCCCCC;
+    border-right:  .1em solid #CCCCCC;
+}
+
+
+
+.goods-tag{
+    margin: 10px 0 0 0;
+    height: 35px;
+    width: 170px; 
+    background-color: #c9302c;
+    color: #fff;
+    line-height: 35px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.grid{
+    width: 100%; 
+}
+
+.search-footer{
+    height: 55px;
+}
+
+.grid-nomargin{
+   padding: 0; 
+}
+
+.main-left{
+    width: 15%;
+    background-color: #fff;
+    float: left;
+    border : .1em solid #CCCCCC;
+}
+
+.main-left h4{
+    font-size: 15px;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    width: 100%;
+    text-align: center;
+}
+
+.main-left-bottom{
+    border-bottom : .1em solid #CCCCCC;
+}
+
+.new-show {
+	padding: 5px;
+	border-radius: 5px;
+}
+.new-show img {
+	width: 100%;
+        height:200px;
+}
+
+.main-left span{
+   font-size: 13px; 
+   padding: 5px;
+}
+
+.main-left-li{
+    border-top : .1em solid #CCCCCC;
+    padding: 10px 5px;
+}
+
+.page-foot{
+    padding: 10px 10px;
+    height: 80px;
+    border-top : .1em solid #CCCCCC;
+    border-bottom : .1em solid #CCCCCC;
+}
+
+.page-foot-main{
+    margin: 20px 0 30px 0;
+}
+
+.page-foot a{
+    text-decoration: none;
+    color: #6c6c6c;
+    display: inline;
+    float: left;
+    margin: 0 4px;
+    white-space: nowrap;
+} 
+
+.page-foot b {
+    color: #ddd;
+    display: inline;
+    float: left;
+    font-weight: 400;
+    margin: 0 5px;
+}
+
+hr{
+    margin: 0 auto;
+    height:2px;
+    border-top:1px solid #CCCCCC;
+}
+
+.page-foot span{
+    color: #6c6c6c;
+    margin: 0 5px;
+    line-height: 35px;
+}
+
+.page-foot p{
+ text-align: center;
+ display: block;
+}
+
+.table .title{
+    width:10%;
+    
+    //text-align: right;
+}
+
+.table{
+ font-size: 14px; 
+ margin-bottom:0;
+}
